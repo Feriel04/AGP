@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <meta charset="utf-8"/>
+    <title>Les Seychelles</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+
+<div style="float:none;">
+
+<header>
+    <section>
+        <div>
+           <h1 class="main_title" style="color: #fff2e8">Réserver votre meilleur voyage aux seychelles</h1>
+        </div>
+    </section>
+</header>
+<nav>
+    <ul>
+        <li><a href="../jsf/accueil.xhtml">Accueil</a></li>
+        <li><a href="../jsf/simpleSearch.xhtml">Recherche</a></li>
+        <li><a href="../jsf/">Choisir une offre</a></li>
+    </ul>
+</nav>
+</div>
+    <div class="research-modal">
+    <div class="research-container">
+        <div class="close">+</div>
+        <h3 class="font-form">Rechercher des informations pour votre voyage</h3>
+        <hr style="margin-right: 7.5em; margin-left: 7.5em; margin-top: 0.5em"/>
+
+<h:form>
+<!-- Catégorie 1: Mot-clé de recherche -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Mot-clé de recherche</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:inputText class="input-add" value="#{entryBean.keyword}" />
+        </td>
+    </tr>
+</table>
+
+
+<!-- Bouton de recherche -->
+    <table style="margin: 0 auto; width: 30em">
+        <tr>
+            <td>
+                <h:commandButton value="Rechercher" action="#{entryBean.search}" styleClass="search-button"/>
+            </td>
+        </tr>
+    </table>
+</h:form>
+
+</div>
+</div>
+	<div class="footer">
+		<div class="footer-txt">
+			<h1>Atelier de Gestion de Projet</h1>
+			<h2>CY Cergy Paris Université</h2>
+			<p class="footer-txt"> 2024 AGP, SEYCHELLES. Tous droits réservés.</p>
+			<p class="footer-txt">Amaury FERRY - Cylia BELKACEMI - Feriel MALEK - Thomas FERNANDEZ</p>
+		</div>
+	</div>
+</body>
+</html>

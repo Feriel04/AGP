@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <meta charset="utf-8"/>
+    <title>Les Seychelles</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+
+<div style="float:none;">
+
+<header>
+    <section>
+        <div>
+           <h1 class="main_title" style="color: #fff2e8">Réserver votre meilleur voyage aux seychelles</h1>
+        </div>
+    </section>
+</header>
+<nav>
+    <ul>
+        <li><a href="../jsf/accueil.xhtml">Accueil</a></li>
+        <li><a href="../jsf/simpleSearch.xhtml">Recherche</a></li>
+        <li><a href="../jsf/">Choisir une offre</a></li>
+    </ul>
+</nav>
+</div>
+    <div class="research-modal">
+    <div class="research-container">
+        <div class="close">+</div>
+        <h3 class="font-form">Rechercher une offre de voyage selon vos critères</h3>
+        <hr style="margin-right: 7.5em; margin-left: 7.5em; margin-top: 0.5em"/>
+
+<h:form>
+<!-- Catégorie 1: Mot-clé de recherche -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Mot-clé de recherche</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:inputText class="input-add" value="#{entryBean.keyword}" />
+        </td>
+    </tr>
+</table>
+
+<!-- Catégorie 2: Durée du voyage -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Durée du voyage (en jours)</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:inputText class="input-add" value="#{entryBean.duration}" />
+        </td>
+    </tr>
+</table>
+
+<!-- Catégorie 3: Niveau de confort -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Niveau de confort</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:selectOneMenu id="comfortLevelInput" value="#{entryBean.comfort}">
+                <f:selectItem itemLabel="Peu importe" itemValue="None1" />
+                <f:selectItem itemLabel="Bas" itemValue="Bas" />
+                <f:selectItem itemLabel="Moyen" itemValue="Moyen" />
+                <f:selectItem itemLabel="Élevé" itemValue="Élevé" />
+            </h:selectOneMenu>
+        </td>
+    </tr>
+</table>
+
+<!-- Catégorie 4: Fourchette de prix -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Fourchette de prix</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Minimum<h:inputText class="input-add" value="#{entryBean.minPrice}" /></p>
+        </td>
+        <td>
+            <p>Maximum<h:inputText class="input-add" value="#{entryBean.maxPrice}" /></p>
+        </td>
+    </tr>
+</table>
+
+
+<!-- Catégorie 6: Type d'activités -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Type d'activités</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:selectOneMenu id="activitiesInput" value="#{entryBean.activity}">
+                <f:selectItem itemLabel="Peu importe" itemValue="None2"/>
+                <f:selectItem itemLabel="Plage" itemValue="plage"/>
+                <f:selectItem itemLabel="Randonnée" itemValue="randonnee"/>
+                <f:selectItem itemLabel="Culture" itemValue="culture"/>
+                <!-- Ajoutez d'autres options au besoin -->
+            </h:selectOneMenu>
+        </td>
+    </tr>
+</table>
+
+<!-- Catégorie 7: Type d'hébergement -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Type d'hébergement</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:selectOneMenu id="accommodationTypeInput" value="#{entryBean.typeHostel}">
+                <f:selectItem itemLabel="Peu importe" itemValue="None3"/>
+                <f:selectItem itemLabel="Hôtels de luxe" itemValue="luxuryHotels"/>
+                <f:selectItem itemLabel="Auberges" itemValue="hostels"/>
+                <f:selectItem itemLabel="Locations de vacances" itemValue="vacationRentals"/>
+            </h:selectOneMenu>
+        </td>
+    </tr>
+</table>
+
+<!-- Catégorie 8: Transport préféré -->
+<table style="margin: 0 auto; width: 30em">
+    <tr>
+        <td>
+            <label class="font-form" style="font-size: 18px">
+                <p>Transport préféré</p>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h:selectOneMenu id="transportPreferenceInput" value="#{entryBean.typeTransport}">
+                <f:selectItem itemLabel="Peu importe" itemValue="None4"/>
+                <f:selectItem itemLabel="Bateau" itemValue="boat"/>
+                <f:selectItem itemLabel="Marche" itemValue="walking"/>
+                <f:selectItem itemLabel="Bus" itemValue="autobus"/>
+            </h:selectOneMenu>
+        </td>
+    </tr>
+</table>
+
+<!-- Bouton de recherche -->
+    <table style="margin: 0 auto; width: 30em">
+        <tr>
+            <td>
+                <h:commandButton value="Rechercher" action="#{entryBean.search}" styleClass="search-button"/>
+            </td>
+        </tr>
+    </table>
+</h:form>
+
+</div>
+</div>
+	<div class="footer">
+		<div class="footer-txt">
+			<h1>Atelier de Gestion de Projet</h1>
+			<h2>CY Cergy Paris Université</h2>
+			<p class="footer-txt"> 2024 AGP, SEYCHELLES. Tous droits réservés.</p>
+			<p class="footer-txt">Amaury FERRY - Cylia BELKACEMI - Feriel MALEK - Thomas FERNANDEZ</p>
+		</div>
+	</div>
+</body>
+</html>
